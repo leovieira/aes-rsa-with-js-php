@@ -1,0 +1,118 @@
+body {
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+	position: relative;
+	background: rgb(170, 15, 196);
+	background: linear-gradient(
+		90deg,
+		rgba(170, 15, 196, 1) 0%,
+		rgba(77, 18, 213, 1) 100%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 25px;
+}
+
+form {
+	width: 100%;
+	max-width: 600px;
+	border-radius: 10px;
+	background-color: #fff;
+	padding: 25px;
+}
+
+form legend {
+	text-align: center;
+	margin-bottom: 30px !important;
+}
+
+.row {
+	margin-top: 20px !important;
+}
+
+.form-control:focus {
+	border: 1px solid #aa0fc4;
+	box-shadow: none;
+}
+
+button {
+	position: relative;
+	border: none;
+	border-radius: 50px;
+	background: rgb(170, 15, 196);
+	background: linear-gradient(
+		90deg,
+		rgba(77, 18, 213, 1) 0%,
+		rgba(170, 15, 196, 1) 100%
+	);
+	padding: 10px 20px;
+	font-weight: 500;
+	color: #fff;
+	user-select: none;
+}
+
+button:focus-visible {
+	outline: none;
+}
+
+button:focus-visible::before {
+	content: "";
+	position: absolute;
+	top: -4px;
+	right: -4px;
+	bottom: -4px;
+	left: -4px;
+	border-radius: 50px;
+	border: 1px solid #aa0fc4;
+}
+
+button:disabled {
+	opacity: 0.8;
+}
+
+button > svg.arrow {
+	margin-left: 2px;
+	transition: transform 600ms ease;
+}
+
+button:hover > svg.arrow {
+	transform: translateX(5px);
+}
+
+button > svg.loader {
+	margin-left: 8px;
+	animation: loader 4s linear infinite;
+}
+
+@keyframes loader {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.response {
+	margin: 0 auto;
+	border: 1px dashed #4d12d5;
+	border-radius: 4px;
+	padding: 5px;
+	color: #4d12d5;
+	text-align: center;
+}
+
+.response.success {
+	border-color: #aa0fc4;
+	color: #aa0fc4;
+}
+
+.response.error {
+	border-color: #c40f42;
+	color: #c40f42;
+}
+
+.response > a {
+	font-weight: 500;
+	color: #aa0fc4;
+	text-decoration: none;
+}
